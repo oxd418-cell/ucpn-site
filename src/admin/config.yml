@@ -1,0 +1,234 @@
+# Налаштування CMS (Sveltia CMS / Decap CMS).
+# 1) Замініть repo на «власник/репозиторій» на GitHub.
+# 2) Команда входить на /admin/ через GitHub (див. README, розділ «CMS»).
+backend:
+  name: github
+  repo: oxd418-cell/ucpn-site
+  branch: main
+
+site_url: https://oxd418-cell.github.io/ucpn-site
+display_url: https://oxd418-cell.github.io/ucpn-site
+media_folder: src/assets/uploads
+public_folder: /assets/uploads
+locale: uk
+
+i18n:
+  structure: multiple_files
+  locales: [uk, en]
+  default_locale: uk
+
+collections:
+  # ---------------- ПОДІЇ ----------------
+  - name: events
+    label: Події (Events)
+    label_singular: Подія
+    folder: src/content/events
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{fields.key}}"
+    i18n: true
+    summary: "{{start | default('—')}} · {{title}}"
+    sortable_fields: [start, title]
+    fields:
+      - { name: key, label: "Адреса сторінки (латиницею, без пробілів)", widget: string, i18n: duplicate, pattern: ["^[a-z0-9-]+$", "Лише малі латинські літери, цифри й дефіси"], hint: "Напр. kinder-album. Після публікації не змінюйте — це адреса сторінки назавжди." }
+      - { name: status, label: "Статус дати", widget: select, i18n: duplicate, default: scheduled, options: [{ label: "Дата відома", value: scheduled }, { label: "Буде анонсовано", value: tba }, { label: "У розробці", value: development }], hint: "Якщо дата ще невідома, оберіть «Буде анонсовано»." }
+      - { name: start, label: "Дата початку", widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", picker_utc: true, required: false, i18n: duplicate, hint: "Коли дата мине, подія сама перейде у «Минулі». Сторінка залишиться за тією ж адресою." }
+      - { name: end, label: "Дата завершення (якщо подія кілька днів)", widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", picker_utc: true, required: false, i18n: duplicate }
+      - { name: category, label: "Категорія", widget: select, i18n: duplicate, options: [{ label: "Події", value: event }, { label: "Мистецькі практики", value: practice }, { label: "Перформанси", value: performance }, { label: "Публікації", value: publication }, { label: "Розмови", value: conversation }] }
+      - { name: title, label: "Назва", widget: string, i18n: true }
+      - { name: summary, label: "Короткий опис (для картки та Google)", widget: text, required: false, i18n: true, hint: "1–2 речення." }
+      - { name: lead, label: "Вступ на сторінці події", widget: text, required: false, i18n: true }
+      - { name: time, label: "Час (напр. 17:00 – 19:00)", widget: string, required: false, i18n: duplicate }
+      - { name: location, label: "Місце", widget: string, required: false, i18n: true }
+      - { name: startTime, label: "Початок (година, напр. 17:00)", widget: string, required: false, i18n: duplicate, pattern: ["^\\d{1,2}:\\d{2}$", "Формат ГГ:ХХ, напр. 17:00"], hint: "Потрібен для кнопки «Додати в календар». Без нього подія додається на весь день." }
+      - { name: endTime, label: "Завершення (година, напр. 19:00)", widget: string, required: false, i18n: duplicate, pattern: ["^\\d{1,2}:\\d{2}$", "Формат ГГ:ХХ, напр. 19:00"] }
+      - { name: address, label: "Адреса (вулиця, будинок, місто)", widget: string, required: false, i18n: true }
+      - { name: mapUrl, label: "Посилання на мапу (Google Maps тощо)", widget: string, required: false, i18n: duplicate, hint: "У Google Maps: Поділитися → Копіювати посилання." }
+      - { name: directions, label: "Як дістатися", widget: text, required: false, i18n: true, hint: "Метро, транспорт, орієнтири, вхід." }
+      - { name: accessibility, label: "Доступність (пандус, туалет, супровід тощо)", widget: text, required: false, i18n: true }
+      - { name: eventLanguage, label: "Мова заходу", widget: select, required: false, i18n: duplicate, options: [{ label: "Українська", value: uk }, { label: "Англійська", value: en }, { label: "Українська та англійська", value: uk-en }] }
+      - { name: interpretation, label: "Переклад і доступність мови", widget: select, multiple: true, required: false, i18n: duplicate, options: [{ label: "Переклад англійською", value: en }, { label: "Переклад українською", value: uk }, { label: "Переклад жестовою мовою", value: sign }, { label: "Субтитри", value: subs }] }
+      - label: "Програма заходу (розклад за часом)"
+        name: schedule
+        widget: list
+        required: false
+        i18n: true
+        summary: "{{fields.time}} · {{fields.title}}"
+        fields:
+          - { name: time, label: "Час (напр. 17:30)", widget: string }
+          - { name: title, label: "Що відбувається", widget: string }
+          - { name: description, label: "Деталі (необов'язково)", widget: text, required: false }
+      - { name: involved, label: "Хто бере участь (рядок через кому)", widget: string, required: false, i18n: true }
+      - { name: image, label: "Головне фото (для картки)", widget: image, required: false, i18n: duplicate, hint: "Горизонтальне, від 1200 px завширшки. Сайт сам створить легкі версії." }
+      - { name: imageAlt, label: "Опис фото для людей, які не бачать зображення", widget: string, required: false, i18n: true }
+      - name: partners
+        label: Партнери
+        widget: relation
+        collection: settings
+        file: partners
+        search_fields: ["partners.*.name"]
+        value_field: "partners.*.id"
+        display_fields: ["partners.*.name"]
+        multiple: true
+        required: false
+        i18n: duplicate
+      - { name: body, label: "Опис події", widget: markdown, required: false, i18n: true }
+      - label: "Фотогалерея (до та під час події)"
+        name: gallery
+        widget: list
+        required: false
+        i18n: duplicate
+        fields:
+          - { name: image, label: Фото, widget: image }
+          - label: "Опис фото"
+            name: alt
+            widget: object
+            fields:
+              - { name: uk, label: "Українською", widget: string, required: false }
+              - { name: en, label: "English", widget: string, required: false }
+      - { name: results, label: "Результати події (додайте після події)", widget: markdown, required: false, i18n: true }
+      - label: "Документація: фото після події"
+        name: documentation
+        widget: list
+        required: false
+        i18n: duplicate
+        fields:
+          - { name: image, label: Фото, widget: image }
+          - label: "Опис фото"
+            name: alt
+            widget: object
+            fields:
+              - { name: uk, label: "Українською", widget: string, required: false }
+              - { name: en, label: "English", widget: string, required: false }
+      - { name: videoUrl, label: "Посилання на відео (YouTube, Vimeo)", widget: string, required: false, i18n: duplicate }
+      - label: "Про художника / художницю"
+        name: artist
+        widget: object
+        required: false
+        i18n: true
+        fields:
+          - { name: name, label: "Ім'я", widget: string, required: false }
+          - { name: bio, label: "Короткий опис", widget: text, required: false }
+          - { name: photo, label: Фото, widget: image, required: false }
+          - { name: instagram, label: "Посилання на Instagram", widget: string, required: false }
+
+  # ---------------- ПУБЛІКАЦІЇ ----------------
+  - name: publications
+    label: Публікації (Publications)
+    label_singular: Публікація
+    folder: src/content/publications
+    extension: md
+    format: frontmatter
+    create: true
+    slug: "{{fields.key}}"
+    i18n: true
+    fields:
+      - { name: key, label: "Адреса сторінки (латиницею, без пробілів)", widget: string, i18n: duplicate, pattern: ["^[a-z0-9-]+$", "Лише малі латинські літери, цифри й дефіси"] }
+      - { name: type, label: Тип, widget: select, i18n: duplicate, options: [{ label: Есей, value: essay }, { label: Розмова, value: conversation }, { label: Дослідження, value: research }, { label: Відео, value: video }] }
+      - { name: status, label: "Статус", widget: select, i18n: duplicate, required: false, options: [{ label: "Опубліковано", value: published }, { label: "У розробці", value: development }] }
+      - { name: published, label: "Дата публікації", widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD", picker_utc: true, required: false, i18n: duplicate }
+      - { name: title, label: "Назва", widget: string, i18n: true }
+      - { name: summary, label: "Короткий опис", widget: text, required: false, i18n: true }
+      - { name: image, label: "Обкладинка", widget: image, required: false, i18n: duplicate }
+      - { name: imageAlt, label: "Опис обкладинки для людей, які не бачать зображення", widget: string, required: false, i18n: true }
+      - { name: period, label: "Період (напр. Жов 2026 – лют 2027)", widget: string, required: false, i18n: true }
+      - { name: where, label: "Де (напр. Онлайн)", widget: string, required: false, i18n: true }
+      - { name: format, label: "Формат (напр. Текст)", widget: string, required: false, i18n: true }
+      - { name: body, label: "Опис", widget: markdown, required: false, i18n: true }
+      - label: "Тексти серії (для есеїв)"
+        name: texts
+        widget: list
+        required: false
+        i18n: true
+        fields:
+          - { name: title, label: Назва, widget: string }
+          - { name: authors, label: Автори, widget: string, required: false }
+          - { name: image, label: Фото, widget: image, required: false }
+          - { name: url, label: "Посилання на текст (коли буде готовий)", widget: string, required: false }
+
+  # ---------------- СТОРІНКИ ----------------
+  - name: pages
+    label: Сторінки (Про нас)
+    label_singular: Сторінка
+    folder: src/content/pages
+    extension: md
+    format: frontmatter
+    create: false
+    delete: false
+    slug: "{{fields.key}}"
+    i18n: true
+    fields:
+      - { name: key, label: "Адреса", widget: string, i18n: duplicate, hint: "Не змінюйте." }
+      - { name: title, label: Заголовок, widget: string, i18n: true }
+      - { name: description, label: "Опис для Google", widget: text, required: false, i18n: true }
+      - { name: body, label: Текст, widget: markdown, required: false, i18n: true }
+
+  # ---------------- НАЛАШТУВАННЯ ----------------
+  - name: settings
+    label: Налаштування
+    files:
+      - name: site
+        label: "Сайт: контакти, команда, юридична інформація"
+        file: src/data/site.yml
+        fields:
+          - { name: name, label: "Скорочена назва", widget: string }
+          - label: "Повна назва"
+            name: fullName
+            widget: object
+            fields: [{ name: uk, label: "Українською", widget: string }, { name: en, label: English, widget: string }]
+          - label: "Опис сайту (для Google та соцмереж)"
+            name: description
+            widget: object
+            fields: [{ name: uk, label: "Українською", widget: text }, { name: en, label: English, widget: text }]
+          - { name: url, label: "Адреса сайту (https://...)", widget: string }
+          - { name: basePath, label: "Підкаталог (зазвичай порожньо)", widget: string, required: false }
+          - { name: email, label: "Пошта", widget: string, required: false }
+          - { name: instagram, label: "Посилання на Instagram", widget: string, required: false }
+          - label: Адреса
+            name: address
+            widget: object
+            fields: [{ name: uk, label: "Українською", widget: string, required: false }, { name: en, label: English, widget: string, required: false }]
+          - { name: heroImage, label: "Фото на головній сторінці", widget: image, required: false }
+          - { name: ogImage, label: "Картинка для соцмереж (за замовчуванням)", widget: image, required: false }
+          - label: "Юридична інформація"
+            name: legal
+            widget: object
+            fields: [{ name: name, label: "Повна назва", widget: string, required: false }, { name: code, label: "Код ЄДРПОУ", widget: string, required: false }, { name: address, label: "Юридична адреса", widget: string, required: false }]
+          - label: Команда
+            name: team
+            widget: list
+            required: false
+            fields:
+              - label: "Ім'я"
+                name: name
+                widget: object
+                fields: [{ name: uk, label: "Українською", widget: string }, { name: en, label: English, widget: string }]
+              - label: Роль
+                name: role
+                widget: object
+                fields: [{ name: uk, label: "Українською", widget: string }, { name: en, label: English, widget: string }]
+              - label: "Про людину"
+                name: bio
+                widget: object
+                required: false
+                fields: [{ name: uk, label: "Українською", widget: text, required: false }, { name: en, label: English, widget: text, required: false }]
+              - { name: photo, label: Фото, widget: image, required: false }
+              - { name: instagram, label: "Instagram (посилання)", widget: string, required: false }
+      - name: partners
+        label: "Партнери: назви, логотипи, посилання"
+        file: src/data/partners.yml
+        fields:
+          - label: Партнери
+            name: partners
+            widget: list
+            fields:
+              - { name: id, label: "Код (латиницею, без пробілів; не змінюйте після використання)", widget: string, pattern: ["^[a-z0-9-]+$", "Лише малі латинські літери, цифри й дефіси"] }
+              - { name: name, label: Назва, widget: string }
+              - { name: url, label: "Посилання на сайт партнера", widget: string, required: false }
+              - { name: logo, label: "Логотип (SVG або PNG з прозорим тлом)", widget: image, required: false }
+              - label: "Підпис"
+                name: description
+                widget: object
+                required: false
+                fields: [{ name: uk, label: "Українською", widget: string, required: false }, { name: en, label: English, widget: string, required: false }]

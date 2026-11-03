@@ -1,0 +1,46 @@
+# Загальні налаштування сайту (редагуються в CMS: «Налаштування → Сайт»)
+name: UCPN
+fullName:
+  en: Ukrainian Culture Professionals Network
+  uk: Мережа українських культурних професіоналів
+description:
+  en: Events, artistic practices, conversations and publications across Ukraine and beyond.
+  uk: Події, мистецькі практики, розмови та публікації в Україні й за її межами.
+# Справжня адреса сайту (потрібна для SEO, sitemap і соцмереж). Напр. https://ucpn.org.ua
+url: "https://oxd418-cell.github.io"
+# Лише якщо сайт лежить не в корені домену (GitHub Pages проєкту): /назва-репозиторію
+basePath: "/ucpn-site"
+email: ""
+instagram: ""
+address:
+  en: ""
+  uk: ""
+heroImage: /assets/uploads/hero_print.jpg
+ogImage: /assets/uploads/hero_print.jpg
+legal:
+  name: ""
+  code: ""
+  address: ""
+team:
+  - name:
+      en: Volodymyr Sheiko
+      uk: Володимир Шейко
+    role:
+      en: Curator
+      uk: Куратор
+    bio:
+      en: Writer, curator and researcher working at the intersection of contemporary art, culture and social processes.
+      uk: Письменник, куратор і дослідник, що працює на перетині сучасного мистецтва, культури та соціальних процесів.
+    photo: /assets/uploads/p_volod.jpg
+    instagram: ""
+  - name:
+      en: Hnat Zabrodskyi
+      uk: Гнат Забродський
+    role:
+      en: Coordinator
+      uk: Координатор
+    bio:
+      en: Lawyer and cultural manager. Co-founder of UCPN. Working on cultural exchange, public programmes and publications.
+      uk: Юрист і культурний менеджер. Співзасновник UCPN. Працює над культурним обміном, публічними програмами та публікаціями.
+    photo: /assets/uploads/p_hnat.jpg
+    instagram: ""

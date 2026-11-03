@@ -1,0 +1,24 @@
+# Партнери (редагуються в CMS: «Налаштування → Партнери»).
+# Логотип — необов'язковий: без нього показується назва. Посилання — теж.
+partners:
+  - id: ucpn
+    name: UCPN
+    url: ""
+    logo: ""
+    description:
+      en: Ukrainian Culture Professionals Network
+      uk: Мережа українських культурних професіоналів
+  - id: space-369
+    name: "3.6.9"
+    url: ""
+    logo: ""
+    description:
+      en: Gallery and Store
+      uk: Галерея і магазин
+  - id: fonds-podium-kunsten
+    name: Fonds Podium Kunsten
+    url: ""
+    logo: ""
+    description:
+      en: Performing Arts Fund NL
+      uk: Performing Arts Fund NL
