@@ -1,46 +1,43 @@
-# Загальні налаштування сайту (редагуються в CMS: «Налаштування → Сайт»)
 name: UCPN
 fullName:
+  uk: Мережа Українських Фахівців Культури
   en: Ukrainian Culture Professionals Network
-  uk: Мережа українських культурних професіоналів
 description:
-  en: Events, artistic practices, conversations and publications across Ukraine and beyond.
   uk: Події, мистецькі практики, розмови та публікації в Україні й за її межами.
-# Справжня адреса сайту (потрібна для SEO, sitemap і соцмереж). Напр. https://ucpn.org.ua
-url: "https://oxd418-cell.github.io"
-# Лише якщо сайт лежить не в корені домену (GitHub Pages проєкту): /назва-репозиторію
-basePath: "/ucpn-site"
-email: ""
-instagram: ""
+  en: Events, artistic practices, conversations and publications across Ukraine and beyond.
+url: https://oxd418-cell.github.io
+basePath: /ucpn-site
+email: ''
+instagram: ''
 address:
-  en: ""
-  uk: ""
+  uk: ''
+  en: ''
 heroImage: /assets/uploads/hero_print.jpg
 ogImage: /assets/uploads/hero_print.jpg
 legal:
-  name: ""
-  code: ""
-  address: ""
+  name: ''
+  code: ''
+  address: ''
 team:
   - name:
-      en: Volodymyr Sheiko
       uk: Володимир Шейко
+      en: Volodymyr Sheiko
     role:
-      en: Curator
       uk: Куратор
+      en: Curator
     bio:
-      en: Writer, curator and researcher working at the intersection of contemporary art, culture and social processes.
       uk: Письменник, куратор і дослідник, що працює на перетині сучасного мистецтва, культури та соціальних процесів.
+      en: Writer, curator and researcher working at the intersection of contemporary art, culture and social processes.
     photo: /assets/uploads/p_volod.jpg
-    instagram: ""
+    instagram: ''
   - name:
-      en: Hnat Zabrodskyi
       uk: Гнат Забродський
+      en: Hnat Zabrodskyi
     role:
-      en: Coordinator
       uk: Координатор
+      en: Coordinator
     bio:
-      en: Lawyer and cultural manager. Co-founder of UCPN. Working on cultural exchange, public programmes and publications.
       uk: Юрист і культурний менеджер. Співзасновник UCPN. Працює над культурним обміном, публічними програмами та публікаціями.
+      en: Lawyer and cultural manager. Co-founder of UCPN. Working on cultural exchange, public programmes and publications.
     photo: /assets/uploads/p_hnat.jpg
-    instagram: ""
+    instagram: ''
