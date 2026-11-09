@@ -14,8 +14,8 @@ UCPN brings people and projects together, creates space for collaboration, and s
 
 ## Areas of Focus
 
-- **Horizontal connections** between Ukrainian and international artists, curators, and cultural organisations.
-- **Art and the experience of war** — engaging with loss, trauma, and lived experiences.
-- **Art in public space** — artistic practices that move beyond conventional exhibition formats.
-- **Cultural heritage** — exploring and reinterpreting heritage and cultural narratives.
-- **Memory and memorialisation** — artistic approaches to personal and collective memory.
+- Horizontal connections between Ukrainian and international artists, curators, and cultural organisations.
+- Art and the experience of war — engaging with loss, trauma, and lived experiences.
+- Art in public space — artistic practices that move beyond conventional exhibition formats.
+- Cultural heritage — exploring and reinterpreting heritage and cultural narratives.
+- Memory and memorialisation — artistic approaches to personal and collective memory.
