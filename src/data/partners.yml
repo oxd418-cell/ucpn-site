@@ -6,3 +6,10 @@ partners:
     description:
       uk: Проєкт UCPN реалізується за підтримки Нідерландського фонду перформативних мистецтв (Performing Arts Fund NL).
       en: The UCPN project is supported by the Performing Arts Fund NL
+  - id: mnozhyna-foundation
+    name: Фундація Множина
+    url: https://mnozhyna.foundation/
+    logo: /assets/uploads/111.png
+    description:
+      uk: ''
+      en: ''
