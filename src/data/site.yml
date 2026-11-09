@@ -20,24 +20,13 @@ legal:
   address: ''
 team:
   - name:
-      uk: Володимир Шейко
-      en: Volodymyr Sheiko
-    role:
-      uk: Куратор
-      en: Curator
-    bio:
-      uk: Письменник, куратор і дослідник, що працює на перетині сучасного мистецтва, культури та соціальних процесів.
-      en: Writer, curator and researcher working at the intersection of contemporary art, culture and social processes.
-    photo: /assets/uploads/p_volod.jpg
-    instagram: ''
-  - name:
       uk: Гнат Забродський
-      en: Hnat Zabrodskyi
+      en: Hnat Zabrodskyy
     role:
-      uk: Координатор
-      en: Coordinator
+      uk: Засновник
+      en: Founder
     bio:
-      uk: Юрист і культурний менеджер. Співзасновник UCPN. Працює над культурним обміном, публічними програмами та публікаціями.
-      en: Lawyer and cultural manager. Co-founder of UCPN. Working on cultural exchange, public programmes and publications.
-    photo: /assets/uploads/p_hnat.jpg
-    instagram: ''
+      uk: Юрист і культурний менеджер. Засновник UCPN. Працює над розвитком організації та горизонтальним мережуванням, реалізацією системних програм та залученням фінансування.
+      en: Lawyer and cultural manager. Founder of UCPN. Focuses on organisational development, building horizontal networks, implementing long-term programmes, and securing funding.
+    photo: /assets/uploads/1212112121212.jpg
+    instagram: https://www.instagram.com/hnatello06/
