@@ -1,22 +1,8 @@
 partners:
-  - id: ucpn
-    name: UCPN
-    url: ''
-    logo: ''
-    description:
-      uk: Мережа українських фахівців культури
-      en: Ukrainian Culture Professionals Network
-  - id: space-369
-    name: 3.6.9
-    url: ''
-    logo: ''
-    description:
-      uk: Галерея і магазин
-      en: Gallery and Store
   - id: fonds-podium-kunsten
-    name: Fonds Podium Kunsten
-    url: ''
-    logo: ''
+    name: Fonds Podiumkunsten
+    url: https://fondspodiumkunsten.nl/en
+    logo: /assets/uploads/FPK Logo Black.svg
     description:
-      uk: Performing Arts Fund NL
-      en: Performing Arts Fund NL
+      uk: Проєкт UCPN реалізується за підтримки Нідерландського фонду перформативних мистецтв (Performing Arts Fund NL).
+      en: The UCPN project is supported by the Performing Arts Fund NL
