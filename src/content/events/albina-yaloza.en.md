@@ -19,12 +19,18 @@ eventLanguage: ''
 interpretation: []
 schedule: []
 involved: ''
-image: /assets/uploads/telegram-cloud-photo-size-2-5422366773954158371-w.jpg
+image: /assets/uploads/Screenshot 2026-11-09 at 13.40.50.png
 imageAlt: Hands making black-and-white prints on a table
 partners: []
 gallery:
   - image: /assets/uploads/Albina/Group 15.png
+    alt:
+      uk: ''
+      en: ''
   - image: /assets/uploads/Albina/Group 14.png
+    alt:
+      uk: ''
+      en: ''
 results: ''
 documentation: []
 videoUrl: ''

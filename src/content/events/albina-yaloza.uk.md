@@ -19,7 +19,7 @@ eventLanguage: ''
 interpretation: []
 schedule: []
 involved: ''
-image: /assets/uploads/telegram-cloud-photo-size-2-5422366773954158371-w.jpg
+image: /assets/uploads/Screenshot 2026-11-09 at 13.40.50.png
 imageAlt: ''
 partners: []
 gallery:
