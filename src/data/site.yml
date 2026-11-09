@@ -29,7 +29,7 @@ team:
       uk: Юрист і культурний менеджер. Засновник UCPN. Працює над розвитком організації та горизонтальним мережуванням, реалізацією системних програм та залученням фінансування.
       en: Lawyer and cultural manager. Founder of UCPN. Focuses on organisational development, building horizontal networks, implementing long-term programmes, and securing funding.
     photo: /assets/uploads/1212112121212.jpg
-    instagram: https://www.instagram.com/hnatello06/
+    instagram: ''
   - name:
       uk: Євген Грицай
       en: Yevhen Hrytsai
@@ -43,8 +43,8 @@ team:
       uk: Максим Гамулець
       en: Maksym Hamulets
     role:
-      uk: Legal officer, special project's manager
-      en: Юрист, менеджер спеціальних проєктів
+      uk: Legal officer, special project's managerЮрист, менеджер спеціальних проєктів
+      en: Legal officer, special project's manager
     bio: null
     photo: /assets/uploads/12312312312312.jpg
     instagram: ''
