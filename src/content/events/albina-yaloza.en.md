@@ -1,11 +1,30 @@
 ---
-key: "albina-yaloza"
-status: "scheduled"
-start: "2026-10-22"
-category: "practice"
-title: "3.6.9 Social × Albina Yaloza"
-summary: "Artistic practice with veterans and teenagers."
-image: "/assets/uploads/print2.jpg"
-imageAlt: "Hands making black-and-white prints on a table"
+key: albina-yaloza
+status: scheduled
+start: 2026-10-22
+end: ''
+category: practice
+title: UCPN social × Albina Yaloza
+summary: 'Linocut as a Practice of Memory and Reflection: A Participatory Printmaking Workshop with Albina Yaloza for Ukrainian Veterans'
+lead: ''
+time: ''
+location: 3.6.9 Gallery and Store
+startTime: ''
+endTime: ''
+address: ''
+mapUrl: ''
+directions: ''
+accessibility: ''
+eventLanguage: ''
+interpretation: []
+schedule: []
+involved: ''
+image: /assets/uploads/print2.jpg
+imageAlt: Hands making black-and-white prints on a table
+partners: []
+gallery: []
+results: ''
+documentation: []
+videoUrl: ''
+artist: null
 ---
-
