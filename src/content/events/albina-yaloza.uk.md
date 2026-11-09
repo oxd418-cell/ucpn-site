@@ -19,8 +19,8 @@ eventLanguage: ''
 interpretation: []
 schedule: []
 involved: ''
-image: /assets/uploads/print2.jpg
-imageAlt: Руки створюють чорно-білі відбитки на столі
+image: /assets/uploads/telegram-cloud-photo-size-2-5422366773954158371-w.jpg
+imageAlt: ''
 partners: []
 gallery: []
 results: ''
@@ -29,11 +29,7 @@ videoUrl: ''
 artist: null
 ---
 
-**Дата:** 22 жовтня 2026 року
-**Місце:** 3.6.9 Gallery and Store, Київ
-**Мисткиня:** Альбіна Ялоза
-
-22 жовтня у просторі 3.6.9 Gallery and Store відбулася друга подія серії «3.6.9 Social» — партисипативна майстерня з лінориту для ветеранів та ветеранок за участі художниці Альбіни Ялози та у співпраці з OTF. Подію організовано за підтримки Ukrainian Culture Professionals Network (UCPN).
+22 жовтня за підтримки Ukrainian Culture Professionals Network (UCPN) у просторі партнера 3.6.9 Gallery and Store відбулася друга подія серії «UCPN Social» — партисипативна майстерня з лінориту для ветеранів та ветеранок за участі художниці Альбіни Ялози та у співпраці з OTF. 
 
 Альбіна запропонувала учасникам та учасницям звернутися до особистих спогадів, речей, подій та образів, які мають для них особливе значення, і втілити їх у ліногравюрах.
 

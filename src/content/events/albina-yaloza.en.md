@@ -19,7 +19,7 @@ eventLanguage: ''
 interpretation: []
 schedule: []
 involved: ''
-image: /assets/uploads/print2.jpg
+image: /assets/uploads/telegram-cloud-photo-size-2-5422366773954158371-w.jpg
 imageAlt: Hands making black-and-white prints on a table
 partners: []
 gallery: []
