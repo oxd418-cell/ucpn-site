@@ -22,7 +22,9 @@ involved: ''
 image: /assets/uploads/telegram-cloud-photo-size-2-5422366773954158371-w.jpg
 imageAlt: Hands making black-and-white prints on a table
 partners: []
-gallery: []
+gallery:
+  - image: /assets/uploads/Albina/Group 15.png
+  - image: /assets/uploads/Albina/Group 14.png
 results: ''
 documentation: []
 videoUrl: ''

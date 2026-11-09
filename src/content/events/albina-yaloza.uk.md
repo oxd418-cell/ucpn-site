@@ -22,7 +22,15 @@ involved: ''
 image: /assets/uploads/telegram-cloud-photo-size-2-5422366773954158371-w.jpg
 imageAlt: ''
 partners: []
-gallery: []
+gallery:
+  - image: /assets/uploads/Albina/Group 15.png
+    alt:
+      uk: ''
+      en: ''
+  - image: /assets/uploads/Albina/Group 14.png
+    alt:
+      uk: ''
+      en: ''
 results: ''
 documentation: []
 videoUrl: ''
