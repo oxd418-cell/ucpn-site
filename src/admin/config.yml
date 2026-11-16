@@ -65,7 +65,7 @@ collections:
           - { name: description, label: "Деталі (необов'язково)", widget: text, required: false }
       - { name: involved, label: "Хто бере участь (рядок через кому)", widget: string, required: false, i18n: true }
       - { name: image, label: "Фото для картки", widget: image, required: false, i18n: duplicate, hint: "Горизонтальне, від 2000 px завширшки. На картках фото обрізається широкою смугою, тож головне тримайте в середині кадру. Сайт сам створить легкі версії." }
-      - { name: imageFocus, label: "Фокус кадру на картці", widget: select, required: false, i18n: duplicate, default: center, options: [{ label: "По центру", value: center }, { label: "Вгору (голови, верх кадру)", value: top }, { label: "Донизу", value: bottom }], hint: "Яку частину фото залишити, коли картка обрізає його широкою смугою." }
+      - { name: imageFocus, label: "Фокус кадру на картці", widget: select, required: false, i18n: duplicate, default: center, options: [{ label: "По центру", value: center }, { label: "Вгору (голови, верх кадру)", value: top }, { label: "Донизу", value: bottom }, { label: "Показати фото цілим (без обрізання)", value: full }], hint: "Яку частину фото залишити, коли картка обрізає його широкою смугою." }
       - { name: imageAlt, label: "Опис фото для людей, які не бачать зображення", widget: string, required: false, i18n: true }
       - name: partners
         label: Партнери
@@ -138,7 +138,7 @@ collections:
       - { name: summary, label: "Підзаголовок (1–2 речення, також для Google)", widget: text, required: false, i18n: true }
       - { name: authors, label: "Автори (через кому)", widget: string, required: false, i18n: true }
       - { name: image, label: "Обкладинка (для картки й сторінки)", widget: image, required: false, i18n: duplicate, hint: "Горизонтальне, від 2000 px завширшки. Широка смуга обрізає краї, тож головне тримайте в середині кадру." }
-      - { name: imageFocus, label: "Фокус кадру на картці", widget: select, required: false, i18n: duplicate, default: center, options: [{ label: "По центру", value: center }, { label: "Вгору", value: top }, { label: "Донизу", value: bottom }] }
+      - { name: imageFocus, label: "Фокус кадру на картці", widget: select, required: false, i18n: duplicate, default: center, options: [{ label: "По центру", value: center }, { label: "Вгору", value: top }, { label: "Донизу", value: bottom }, { label: "Показати фото цілим (без обрізання)", value: full }], hint: "Якщо на фото є напис або важливі деталі по краях, оберіть «цілим»." }
       - { name: imageAlt, label: "Опис обкладинки для людей, які не бачать зображення", widget: string, required: false, i18n: true }
       - { name: period, label: "Період (напр. Жов 2026 – лют 2027)", widget: string, required: false, i18n: true }
       - { name: where, label: "Де (напр. Онлайн)", widget: string, required: false, i18n: true }

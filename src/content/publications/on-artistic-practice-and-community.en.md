@@ -7,6 +7,7 @@ title: 'Announcement. Introducing UCPN’s First Project: An Essay Series in Dia
 summary: Three pairs of Ukrainian and international authors will develop a series of essays exploring culture during and after the war. UCPN’s first project focuses on dialogue, collaboration, and the creation of new professional connections.
 image: /assets/uploads/Dialogue in Ink.png
 imageAlt: Black-and-white prints on a wooden table
+imageFocus: full
 period: ''
 where: ''
 format: ''

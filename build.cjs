@@ -20,7 +20,7 @@ const OUT = path.join(ROOT, 'dist');
 const LANGS = ['uk', 'en'];
 const CATEGORIES = ['event', 'practice', 'performance', 'publication', 'conversation'];
 const PUB_TYPES = ['essay', 'story', 'publication', 'conversation', 'research', 'video'];
-const FOCUS = ['top', 'center', 'bottom'];
+const FOCUS = ['top', 'center', 'bottom', 'full'];
 const warn = (m) => console.warn('  ! ' + m);
 
 /* ---------- допоміжне ---------- */
