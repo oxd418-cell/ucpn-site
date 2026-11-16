@@ -25,7 +25,7 @@ partners:
       uk: Логістичний та фінансовий партнер
       en: Logistical and financial partner
   - id: chance-for-change
-    role: partner
+    role: event
     name: Фонд «Шанс на зміну»
     nameEn: Chance for Change Foundation
     url: ''
@@ -34,7 +34,7 @@ partners:
       uk: ''
       en: ''
   - id: otf
-    role: partner
+    role: event
     name: OTF
     url: ''
     logo: ''

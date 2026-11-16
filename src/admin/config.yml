@@ -265,7 +265,7 @@ collections:
               - { name: id, label: "Код (латиницею, без пробілів; не змінюйте після використання)", widget: string, pattern: ["^[a-z0-9-]+$", "Лише малі латинські літери, цифри й дефіси"] }
               - { name: name, label: Назва, widget: string }
               - { name: nameEn, label: "Назва англійською (якщо відрізняється)", widget: string, required: false }
-              - { name: role, label: Роль, widget: select, default: partner, options: [{ label: Партнер, value: partner }, { label: Грантодавець, value: grantor }], hint: "Грантодавців сайт показує окремо, у колонці «Підтримка»." }
+              - { name: role, label: Роль, widget: select, default: partner, options: [{ label: "Партнер організації (також на «Про нас»)", value: partner }, { label: "Партнер події (лише на сторінках її подій)", value: event }, { label: Грантодавець, value: grantor }], hint: "Грантодавців сайт показує окремо, у колонці «Підтримка». Партнер події не з'являється на сторінці «Про нас»." }
               - { name: url, label: "Посилання на сайт партнера", widget: string, required: false }
               - { name: logo, label: "Логотип (SVG або PNG з прозорим тлом)", widget: image, required: false }
               - label: "Підпис"
