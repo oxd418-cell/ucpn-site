@@ -23,7 +23,7 @@ interpretation: []
 schedule: []
 involved: ''
 registrationUrl: ''
-photoDownload: true
+photoDownload: false
 image: /assets/uploads/events/albina-yaloza-children/cover.jpg
 imageAlt: Workshop participants with the artist Albina Yaloza holding a sign reading 14.11.26
 imageFocus: '58'

@@ -23,7 +23,7 @@ interpretation: []
 schedule: []
 involved: ''
 registrationUrl: ''
-photoDownload: true
+photoDownload: false
 image: /assets/uploads/events/kinder-album/cover.jpg
 imageAlt: Учасники майстерні слухають художницю Kinder Album
 imageFocus: center

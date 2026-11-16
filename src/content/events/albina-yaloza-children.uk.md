@@ -23,7 +23,7 @@ interpretation: []
 schedule: []
 involved: ''
 registrationUrl: ''
-photoDownload: true
+photoDownload: false
 image: /assets/uploads/events/albina-yaloza-children/cover.jpg
 imageAlt: Учасники майстерні з художницею Альбіною Ялозою та табличкою «14.11.26 369 × Шанс на зміну»
 imageFocus: '58'
