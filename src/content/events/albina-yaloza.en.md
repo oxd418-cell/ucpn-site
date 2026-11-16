@@ -9,6 +9,7 @@ summary: A workshop with Albina Yaloza for Ukrainian veterans
 lead: ''
 format: Workshop
 within: UCPN Social
+direction: Artists Working with Trauma and Healing
 time: ''
 location: 3.6.9 Gallery and Store, Kyiv
 startTime: ''

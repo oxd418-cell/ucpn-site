@@ -9,6 +9,7 @@ summary: Майстерня лінориту з художницею Альбі�
 lead: ''
 format: Творча майстерня
 within: UCPN Social
+direction: Artists Working with Trauma and Healing
 time: ''
 location: 3.6.9 Gallery and Store, Київ
 startTime: ''

@@ -41,6 +41,7 @@ collections:
       - { name: lead, label: "Вступ на сторінці події", widget: text, required: false, i18n: true }
       - { name: format, label: "Формат (напр. Воркшоп, зустріч)", widget: string, required: false, i18n: true }
       - { name: within, label: "У межах (програма чи серія, напр. UCPN Social)", widget: string, required: false, i18n: true, hint: "Показується внизу сторінки. Якщо порожньо, буде «UCPN»." }
+      - { name: direction, label: "Програмний напрям (напр. Artists Working with Trauma and Healing)", widget: string, required: false, i18n: true, hint: "Показується внизу сторінки під «У межах»." }
       - { name: registrationUrl, label: "Посилання на реєстрацію", widget: string, required: false, i18n: duplicate, hint: "Кнопка «Зареєструватися» з'являється лише для майбутніх подій і сама зникає після дати." }
       - { name: time, label: "Час (напр. 17:00 – 19:00)", widget: string, required: false, i18n: duplicate }
       - { name: location, label: "Місце", widget: string, required: false, i18n: true }
@@ -157,6 +158,7 @@ collections:
               - { name: en, label: "English", widget: string, required: false }
       - { name: pdf, label: "PDF для завантаження", widget: file, required: false, i18n: duplicate, hint: "Розмір файлу сайт покаже сам." }
       - { name: within, label: "У межах (програма чи серія)", widget: string, required: false, i18n: true, hint: "Якщо порожньо, буде «UCPN»." }
+      - { name: direction, label: "Програмний напрям", widget: string, required: false, i18n: true }
       - name: partners
         label: "Партнери й грантодавці"
         widget: relation
