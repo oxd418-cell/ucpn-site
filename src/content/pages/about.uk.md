@@ -4,7 +4,7 @@ title: Про нас
 description: Хто такі UCPN і чим займаються.
 ---
 
-# ![](/assets/uploads/convo.jpg "Meet")Про нас
+# ![](/assets/uploads/about-team.jpg "UCPN")Про нас
 
 **Мережа українських фахівців культури (Ukrainian Culture Professionals Network, UCPN)** — незалежна ініціатива, що підтримує самостійні, низові та позаінституційні культурні й мистецькі проєкти.
 

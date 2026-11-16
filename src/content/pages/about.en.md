@@ -4,7 +4,7 @@ title: About
 description: Who UCPN is and what it does.
 ---
 
-# About Us
+# ![](/assets/uploads/about-team.jpg "UCPN")About Us
 
 **Ukrainian Culture Professionals Network (UCPN)** is an independent initiative supporting grassroots, artist-led, and non-institutional cultural and artistic projects.
 

@@ -29,7 +29,7 @@ partners:
     name: Фонд «Шанс на зміну»
     nameEn: Chance for Change Foundation
     url: https://www.instagram.com/shans_na_zminy/
-    logo: ''
+    logo: /assets/uploads/logos/chance-for-change.png
     description:
       uk: ''
       en: ''
@@ -37,7 +37,7 @@ partners:
     role: event
     name: OTF
     url: https://otf.one/
-    logo: ''
+    logo: /assets/uploads/logos/otf.png
     description:
       uk: ''
       en: ''
