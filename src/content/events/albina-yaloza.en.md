@@ -23,6 +23,7 @@ interpretation: []
 schedule: []
 involved: ''
 registrationUrl: ''
+photoDownload: true
 image: /assets/uploads/events/albina-yaloza/cover.jpg
 imageAlt: An ink roller over a linocut block
 imageFocus: center

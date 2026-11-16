@@ -23,6 +23,7 @@ interpretation: []
 schedule: []
 involved: ''
 registrationUrl: ''
+photoDownload: true
 image: /assets/uploads/events/albina-yaloza/cover.jpg
 imageAlt: Валик з фарбою над лінорит-матрицею
 imageFocus: center
