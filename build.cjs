@@ -70,6 +70,27 @@ function loadCollection(name) {
   return items;
 }
 
+/* ---------- ZIP-архів фото (без сторонніх бібліотек; JPEG уже стиснені, тож файли зберігаються без стиснення) ---------- */
+const CRC_TABLE = (() => { const t = new Uint32Array(256); for (let n = 0; n < 256; n++) { let c = n; for (let k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; t[n] = c >>> 0; } return t; })();
+const crc32 = (buf) => { let c = 0xFFFFFFFF; for (let i = 0; i < buf.length; i++) c = CRC_TABLE[(c ^ buf[i]) & 0xFF] ^ (c >>> 8); return (c ^ 0xFFFFFFFF) >>> 0; };
+function makeZip(files) {
+  const parts = []; const central = []; let offset = 0;
+  for (const f of files) {
+    const name = Buffer.from(f.name, 'utf8'); const data = f.data; const crc = crc32(data);
+    const lh = Buffer.alloc(30); lh.writeUInt32LE(0x04034b50, 0); lh.writeUInt16LE(20, 4); lh.writeUInt16LE(0x0800, 6); lh.writeUInt16LE(0, 8);
+    lh.writeUInt16LE(0, 10); lh.writeUInt16LE(0x21, 12); lh.writeUInt32LE(crc, 14); lh.writeUInt32LE(data.length, 18); lh.writeUInt32LE(data.length, 22);
+    lh.writeUInt16LE(name.length, 26); lh.writeUInt16LE(0, 28);
+    const ch = Buffer.alloc(46); ch.writeUInt32LE(0x02014b50, 0); ch.writeUInt16LE(20, 4); ch.writeUInt16LE(20, 6); ch.writeUInt16LE(0x0800, 8); ch.writeUInt16LE(0, 10);
+    ch.writeUInt16LE(0, 12); ch.writeUInt16LE(0x21, 14); ch.writeUInt32LE(crc, 16); ch.writeUInt32LE(data.length, 20); ch.writeUInt32LE(data.length, 24);
+    ch.writeUInt16LE(name.length, 28); ch.writeUInt32LE(offset, 42);
+    parts.push(lh, name, data); central.push(ch, name); offset += 30 + name.length + data.length;
+  }
+  const cd = Buffer.concat(central);
+  const end = Buffer.alloc(22); end.writeUInt32LE(0x06054b50, 0); end.writeUInt16LE(files.length, 8); end.writeUInt16LE(files.length, 10);
+  end.writeUInt32LE(cd.length, 12); end.writeUInt32LE(offset, 16);
+  return Buffer.concat([...parts, cd, end]);
+}
+
 /* ---------- зображення ---------- */
 // Обходить і підпапки (напр. uploads/Albina/...): ключ у IMGS збігається з тим, що CMS пише в тексті («/assets/uploads/Albina/1.png»).
 function listImages(dir, rel) {
@@ -175,6 +196,30 @@ async function build() {
     return p;
   });
   // Сторінка вже має власний заголовок, тож перший «# Заголовок» у тексті (повтор назви) прибираємо, а картинку з нього лишаємо.
+  // Архів фото для завантаження (вмикається в CMS для кожної події окремо): один файл на подію, спільний для обох мов.
+  const zips = {};
+  for (const e of events) {
+    const on = e.photoDownload === true || e.photoDownload === 'true';
+    if (!on) continue;
+    if (!zips[e.key]) {
+      const list = [].concat(e.gallery || [], e.documentation || []).filter((g) => g && g.image).map((g) => g.image);
+      const files = []; let i = 0;
+      for (const img of list) {
+        const p = path.join(SRC, img.replace(/^\//, ''));
+        if (!fs.existsSync(p)) continue;
+        i += 1;
+        files.push({ name: `UCPN-${e.key}-${String(i).padStart(2, '0')}${path.extname(p).toLowerCase()}`, data: fs.readFileSync(p) });
+      }
+      if (files.length) {
+        const buf = makeZip(files);
+        const rel = `/assets/zip/UCPN-${e.key}-${hash(buf)}.zip`;
+        fs.mkdirSync(path.join(OUT, 'assets', 'zip'), { recursive: true });
+        fs.writeFileSync(path.join(OUT, rel), buf);
+        zips[e.key] = { url: rel, size: buf.length, count: files.length };
+      }
+    }
+    if (zips[e.key]) e.zip = zips[e.key];
+  }
   const pages = loadCollection('pages').map((pg) => {
     pg.html = fixHtml(pg.html).replace(/^\s*<h1[^>]*>([\s\S]*?)<\/h1>/, (m, inner) => { const img = inner.match(/<img [^>]*>/); return img ? `<p>${img[0]}</p>` : ''; });
     return pg;

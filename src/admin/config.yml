@@ -93,6 +93,7 @@ collections:
               - { name: uk, label: "Українською", widget: string, required: false }
               - { name: en, label: "English", widget: string, required: false }
       - { name: results, label: "Результати події (додайте після події)", widget: markdown, required: false, i18n: true }
+      - { name: photoDownload, label: "Кнопка «Завантажити всі фото» (ZIP)", widget: boolean, default: false, required: false, i18n: duplicate, hint: "Для партнерів і преси. Будь-хто на сайті зможе завантажити фото з каруселі. Для подій із дітьми вмикайте лише за наявності згоди." }
       - label: "Фото після події (додаються до каруселі)"
         name: documentation
         widget: list

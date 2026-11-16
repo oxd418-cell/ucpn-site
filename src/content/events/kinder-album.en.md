@@ -23,6 +23,7 @@ interpretation: []
 schedule: []
 involved: ''
 registrationUrl: ''
+photoDownload: true
 image: /assets/uploads/events/kinder-album/cover.jpg
 imageAlt: Workshop participants listening to the artist Kinder Album
 imageFocus: center
