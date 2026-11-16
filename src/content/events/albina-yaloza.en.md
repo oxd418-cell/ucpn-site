@@ -1,14 +1,16 @@
 ---
 key: albina-yaloza
 status: scheduled
-start: 2026-10-22
+start: '2026-10-22'
 end: ''
-category: practice
-title: UCPN social × Albina Yaloza
-summary: 'Linocut as a Practice of Memory and Reflection: A Participatory Printmaking Workshop with Albina Yaloza for Ukrainian Veterans'
+category: event
+title: 'UCPN Social: Linocut as a Practice of Memory and Reflection'
+summary: A workshop with Albina Yaloza for Ukrainian veterans
 lead: ''
+format: Workshop
+within: UCPN Social
 time: ''
-location: 3.6.9 Gallery and Store
+location: 3.6.9 Gallery and Store, Kyiv
 startTime: ''
 endTime: ''
 address: ''
@@ -19,36 +21,67 @@ eventLanguage: ''
 interpretation: []
 schedule: []
 involved: ''
-format: Workshop, meeting
-within: UCPN Social
 registrationUrl: ''
-image: /assets/uploads/Screenshot 2026-11-09 at 13.40.50.png
-imageAlt: Hands making black-and-white prints on a table
+image: /assets/uploads/events/albina-yaloza/cover.jpg
+imageAlt: An ink roller over a linocut block
+imageFocus: center
 partners:
-  - 3-6-9
+- otf
+- 3-6-9
+- fonds-podium-kunsten
 gallery:
-  - image: /assets/uploads/Albina/Group 15.png
-    alt:
-      uk: ''
-      en: ''
-  - image: /assets/uploads/Albina/Group 14.png
-    alt:
-      uk: ''
-      en: ''
+- image: /assets/uploads/events/albina-yaloza/01.jpg
+  alt:
+    uk: ''
+    en: ''
+- image: /assets/uploads/events/albina-yaloza/02.jpg
+  alt:
+    uk: ''
+    en: ''
+- image: /assets/uploads/events/albina-yaloza/03.jpg
+  alt:
+    uk: ''
+    en: ''
+- image: /assets/uploads/events/albina-yaloza/04.jpg
+  alt:
+    uk: ''
+    en: ''
+- image: /assets/uploads/events/albina-yaloza/05.jpg
+  alt:
+    uk: ''
+    en: ''
+- image: /assets/uploads/events/albina-yaloza/06.jpg
+  alt:
+    uk: ''
+    en: ''
+- image: /assets/uploads/events/albina-yaloza/07.jpg
+  alt:
+    uk: ''
+    en: ''
+- image: /assets/uploads/events/albina-yaloza/08.jpg
+  alt:
+    uk: ''
+    en: ''
+- image: /assets/uploads/events/albina-yaloza/09.jpg
+  alt:
+    uk: ''
+    en: ''
 results: ''
 documentation: []
 videoUrl: ''
-artist: null
+artist:
+  name: Albina Yaloza
+  bio: Ukrainian artist working primarily with linocut. Her practice combines graphic minimalism with monumental sacred and biblical imagery, reinterpreting archaic religious narratives through the language of contemporary art.
+  photo: /assets/uploads/events/albina-yaloza/artist.jpg
+  instagram: ''
 ---
 
-On 22 October, with the support of the Ukrainian Culture Professionals Network (UCPN), the second event in the _UCPN Social_ series took place at our partner venue, 3.6.9 Gallery and Store — a participatory linocut workshop for Ukrainian veterans, led by artist Albina Yaloza in collaboration with OTF.
+On 22 October, UCPN Social hosted a linocut workshop led by Ukrainian artist Albina Yaloza, bringing together veterans navigating their transition to civilian life.
 
-Albina invited participants to reflect on personal memories, objects, events, and images that hold particular significance for them, and to translate these reflections into linocut prints.
+Participants were invited to reflect on meaningful memories, objects, places, and personal experiences, transforming them into images through the technique of linocut.
 
-The printing process became a collective practice, with the entire group participating in and witnessing the creation of each print.
+Working with Albina, they developed their compositions, carved printing blocks, and produced their own prints. Each work was printed in a small edition of two, allowing participants to keep one copy while contributing another, together with the original printing block, to a charity initiative.
 
-Each work was produced in an edition of two. One print will remain with its creator, while the second, together with the original linoleum printing block, will be offered for a charity sale.
+The workshop explored how artistic practice can create space for reflection, conversation, and shared experience without requiring participants to express everything in words.
 
-**About the Artist**
-
-Albina Yaloza is a Ukrainian artist working primarily with linocut. Her practice combines graphic minimalism with monumental sacred and biblical imagery, reinterpreting archaic religious narratives through the language of contemporary art.
+The event was organised by UCPN in collaboration with OTF and 3.6.9 Gallery and Store as part of the *Artists Working with Trauma and Healing* programme.

@@ -10,6 +10,7 @@ partners:
   - id: mnozhyna-foundation
     role: grantor
     name: Фундація Множина
+    nameEn: Mnozhyna Foundation
     url: https://mnozhyna.foundation/
     logo: /assets/uploads/111.png
     description:
@@ -23,3 +24,20 @@ partners:
     description:
       uk: Логістичний та фінансовий партнер
       en: Logistical and financial partner
+  - id: chance-for-change
+    role: partner
+    name: Фонд «Шанс на зміну»
+    nameEn: Chance for Change Foundation
+    url: ''
+    logo: ''
+    description:
+      uk: ''
+      en: ''
+  - id: otf
+    role: partner
+    name: OTF
+    url: ''
+    logo: ''
+    description:
+      uk: ''
+      en: ''

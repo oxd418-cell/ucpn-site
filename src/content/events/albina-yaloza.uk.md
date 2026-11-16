@@ -1,14 +1,16 @@
 ---
 key: albina-yaloza
 status: scheduled
-start: 2026-10-22
+start: '2026-10-22'
 end: ''
-category: practice
-title: UCPN social × Albina Yaloza
-summary: 'Лінорит як практика пам’яті та рефлексії: партисипативна майстерня з Альбіною Ялозою для українських ветеранів та ветеранок.'
+category: event
+title: 'Лінорит як практика пам''яті та рефлексії: майстерня з Альбіною Ялозою для ветеранів'
+summary: Майстерня лінориту з художницею Альбіною Ялозою для ветеранів і ветеранок із OTF.
 lead: ''
+format: Творча майстерня
+within: UCPN Social
 time: ''
-location: 3.6.9, Київ
+location: 3.6.9 Gallery and Store, Київ
 startTime: ''
 endTime: ''
 address: ''
@@ -19,36 +21,67 @@ eventLanguage: ''
 interpretation: []
 schedule: []
 involved: ''
-format: Воркшоп, зустріч
-within: UCPN Social
 registrationUrl: ''
-image: /assets/uploads/Screenshot 2026-11-09 at 13.40.50.png
-imageAlt: ''
+image: /assets/uploads/events/albina-yaloza/cover.jpg
+imageAlt: Валик з фарбою над лінорит-матрицею
+imageFocus: center
 partners:
-  - 3-6-9
+- otf
+- 3-6-9
+- fonds-podium-kunsten
 gallery:
-  - image: /assets/uploads/Albina/Group 15.png
-    alt:
-      uk: ''
-      en: ''
-  - image: /assets/uploads/Albina/Group 14.png
-    alt:
-      uk: ''
-      en: ''
+- image: /assets/uploads/events/albina-yaloza/01.jpg
+  alt:
+    uk: ''
+    en: ''
+- image: /assets/uploads/events/albina-yaloza/02.jpg
+  alt:
+    uk: ''
+    en: ''
+- image: /assets/uploads/events/albina-yaloza/03.jpg
+  alt:
+    uk: ''
+    en: ''
+- image: /assets/uploads/events/albina-yaloza/04.jpg
+  alt:
+    uk: ''
+    en: ''
+- image: /assets/uploads/events/albina-yaloza/05.jpg
+  alt:
+    uk: ''
+    en: ''
+- image: /assets/uploads/events/albina-yaloza/06.jpg
+  alt:
+    uk: ''
+    en: ''
+- image: /assets/uploads/events/albina-yaloza/07.jpg
+  alt:
+    uk: ''
+    en: ''
+- image: /assets/uploads/events/albina-yaloza/08.jpg
+  alt:
+    uk: ''
+    en: ''
+- image: /assets/uploads/events/albina-yaloza/09.jpg
+  alt:
+    uk: ''
+    en: ''
 results: ''
 documentation: []
 videoUrl: ''
-artist: null
+artist:
+  name: Альбіна Ялоза
+  bio: Українська художниця, що працює переважно в техніці лінориту. У своїй творчості поєднує графічний мінімалізм із масштабними сакральними та біблійними мотивами, переосмислюючи архаїчні релігійні сюжети засобами сучасного мистецтва.
+  photo: /assets/uploads/events/albina-yaloza/artist.jpg
+  instagram: ''
 ---
 
-22 жовтня за підтримки Ukrainian Culture Professionals Network (UCPN) у просторі партнера 3.6.9 Gallery and Store відбулася друга подія серії «UCPN Social» — партисипативна майстерня з лінориту для ветеранів та ветеранок за участі художниці Альбіни Ялози та у співпраці з OTF. 
+22 жовтня Ukrainian Culture Professionals Network (UCPN) організувала творчу майстерню з українською художницею Альбіною Ялозою для ветеранів і ветеранок із OTF.
 
-Альбіна запропонувала учасникам та учасницям звернутися до особистих спогадів, речей, подій та образів, які мають для них особливе значення, і втілити їх у ліногравюрах.
+Подія відбулася в межах програмного напряму UCPN **Artists Working with Trauma and Healing**, який досліджує можливості мистецтва для осмислення особистого досвіду, роботи з пам'яттю та емоційної рефлексії.
 
-Процес друку став спільною практикою: створення кожного відбитка відбувалося за участі та у присутності всієї групи.
+Альбіна запропонувала учасникам звернутися до речей, подій та образів, які мають для них особливе значення, і спробувати втілити їх у техніці лінориту.
 
-Кожну роботу надруковано тиражем у два примірники. Один залишиться в автора чи авторки, а другий разом з оригінальною ліногравюрною матрицею буде виставлено на благодійний продаж. 
+Кожен учасник розробив власний ескіз, переніс його на лінолеум, вирізав зображення та створив друкований відбиток. Особливою частиною майстерні став процес друку: створення кожного відбитка перетворювалося на спільну дію, за якою спостерігали та до якої долучалися інші учасники.
 
-**Про мисткиню**
-
-Альбіна Ялоза — українська художниця, що працює переважно в техніці лінориту. У своїй творчості вона поєднує графічний мінімалізм із масштабними сакральними та біблійними мотивами, переосмислюючи архаїчні релігійні сюжети засобами сучасного мистецтва.
+Зустріч продемонструвала, як художня практика може створювати простір для осмислення особистих спогадів і переживань без необхідності висловлювати їх словами. Для UCPN важливо підтримувати саме такі формати, у яких мистецтво стає приводом для діалогу, взаємодії та формування нових зв'язків.
