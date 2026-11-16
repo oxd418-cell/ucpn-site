@@ -88,7 +88,7 @@ async function processImages() {
   if (!fs.existsSync(dir)) return meta;
   for (const f of listImages(dir, '')) {
     const ext = path.extname(f).toLowerCase();
-    const base = f.slice(0, f.length - ext.length).replace(/[^a-zA-Z0-9_-]+/g, '-');
+    const base = f.slice(0, f.length - ext.length).replace(/[^a-zA-Z0-9_-]+/g, '-') + '-' + hash(fs.readFileSync(path.join(dir, f)));
     const key = '/assets/uploads/' + f;
     if (['.svg', '.gif', '.png', '.jpg', '.jpeg', '.webp', '.avif'].indexOf(ext) < 0) continue;
     if (ext === '.svg' || ext === '.gif') { meta[key] = { raw: true }; continue; }
