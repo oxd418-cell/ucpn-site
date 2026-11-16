@@ -91,7 +91,14 @@ async function processImages() {
     const base = f.slice(0, f.length - ext.length).replace(/[^a-zA-Z0-9_-]+/g, '-') + '-' + hash(fs.readFileSync(path.join(dir, f)));
     const key = '/assets/uploads/' + f;
     if (['.svg', '.gif', '.png', '.jpg', '.jpeg', '.webp', '.avif'].indexOf(ext) < 0) continue;
-    if (ext === '.svg' || ext === '.gif') { meta[key] = { raw: true }; continue; }
+    if (ext === '.svg') {
+      // пропорції SVG (для однакового зорового розміру логотипів)
+      const head = readText(path.join(dir, f)).slice(0, 2000);
+      const vb = head.match(/viewBox="\s*[-\d.]+[\s,]+[-\d.]+[\s,]+([\d.]+)[\s,]+([\d.]+)/);
+      meta[key] = { raw: true, ratio: vb ? +vb[1] / +vb[2] : 0 };
+      continue;
+    }
+    if (ext === '.gif') { meta[key] = { raw: true }; continue; }
     const img = sharp(path.join(dir, f)).rotate();
     const info = await img.metadata();
     const rot = info.orientation && info.orientation >= 5;
