@@ -86,7 +86,7 @@ main:focus{outline:none}
 .kv dd{font-size:18px}
 .kv.big{max-width:none;border-bottom:1px solid var(--line);padding-block:8px}
 .kv.big dt,.kv.big dd{padding-block:16px}
-.kv.big dd{font-size:clamp(20px,2.4vw,30px);font-weight:600;letter-spacing:-0.02em}
+.kv.big dd{font-size:19px;font-weight:600;letter-spacing:-0.01em}
 .kv.big dt{padding-top:22px}
 @media(max-width:560px){.kv{grid-template-columns:1fr;gap:2px}.kv dd{margin-bottom:12px}.kv.big dt{padding-bottom:0}.kv.big dd{padding-top:0}}
 
