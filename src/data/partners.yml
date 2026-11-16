@@ -1,5 +1,6 @@
 partners:
   - id: fonds-podium-kunsten
+    role: grantor
     name: Fonds Podiumkunsten
     url: https://fondspodiumkunsten.nl/en
     logo: /assets/uploads/FPK Logo Black.svg
@@ -7,6 +8,7 @@ partners:
       uk: Проєкт UCPN реалізується за підтримки Нідерландського фонду перформативних мистецтв (Performing Arts Fund NL).
       en: The UCPN project is supported by the Performing Arts Fund NL
   - id: mnozhyna-foundation
+    role: grantor
     name: Фундація Множина
     url: https://mnozhyna.foundation/
     logo: /assets/uploads/111.png
@@ -14,6 +16,7 @@ partners:
       uk: Грантова підтримка UCPN
       en: Grant support for UCPN
   - id: 3-6-9
+    role: partner
     name: 3.6.9 Gallery and Store
     url: https://www.instagram.com/3.6.9spacekyiv/
     logo: /assets/uploads/Logo-horizontal.svg

@@ -19,7 +19,8 @@ const SRC = path.join(ROOT, 'src');
 const OUT = path.join(ROOT, 'dist');
 const LANGS = ['uk', 'en'];
 const CATEGORIES = ['event', 'practice', 'performance', 'publication', 'conversation'];
-const PUB_TYPES = ['essay', 'conversation', 'research', 'video'];
+const PUB_TYPES = ['essay', 'story', 'publication', 'conversation', 'research', 'video'];
+const FOCUS = ['top', 'center', 'bottom'];
 const warn = (m) => console.warn('  ! ' + m);
 
 /* ---------- допоміжне ---------- */
@@ -70,15 +71,24 @@ function loadCollection(name) {
 }
 
 /* ---------- зображення ---------- */
+// Обходить і підпапки (напр. uploads/Albina/...): ключ у IMGS збігається з тим, що CMS пише в тексті («/assets/uploads/Albina/1.png»).
+function listImages(dir, rel) {
+  const out = [];
+  for (const e of fs.readdirSync(path.join(dir, rel), { withFileTypes: true })) {
+    const r = rel ? rel + '/' + e.name : e.name;
+    if (e.isDirectory()) out.push(...listImages(dir, r)); else out.push(r);
+  }
+  return out;
+}
 async function processImages() {
   const dir = path.join(SRC, 'assets', 'uploads');
   const meta = {};
   const outDir = path.join(OUT, 'assets', 'img');
   fs.mkdirSync(outDir, { recursive: true });
   if (!fs.existsSync(dir)) return meta;
-  for (const f of fs.readdirSync(dir)) {
+  for (const f of listImages(dir, '')) {
     const ext = path.extname(f).toLowerCase();
-    const base = path.basename(f, path.extname(f)).replace(/[^a-zA-Z0-9_-]+/g, '-');
+    const base = f.slice(0, f.length - ext.length).replace(/[^a-zA-Z0-9_-]+/g, '-');
     const key = '/assets/uploads/' + f;
     if (['.svg', '.gif', '.png', '.jpg', '.jpeg', '.webp', '.avif'].indexOf(ext) < 0) continue;
     if (ext === '.svg' || ext === '.gif') { meta[key] = { raw: true }; continue; }
@@ -109,6 +119,15 @@ async function build() {
   site.url = String(site.url || 'https://example.org').replace(/\/$/, '');
   const partners = (loadYaml(path.join(SRC, 'data', 'partners.yml')).partners || []).filter((p) => p && p.id && p.name);
 
+  const base = String(site.basePath || '').replace(/\/$/, '');
+  // Посилання й картинки з CMS-тексту пишуться від кореня («/assets/...»): додаємо підкаталог сайту й лінивє завантаження.
+  const fixHtml = (html) => String(html || '')
+    .replace(/(src|href)="\/(?!\/)/g, '$1="' + base + '/')
+    .replace(/<img /g, '<img loading="lazy" decoding="async" ');
+  const fileSize = (urlPath) => {
+    try { return fs.statSync(path.join(SRC, String(urlPath).replace(/^\//, ''))).size; } catch (e) { return 0; }
+  };
+
   fs.rmSync(OUT, { recursive: true, force: true });
   fs.mkdirSync(OUT, { recursive: true });
 
@@ -134,26 +153,25 @@ async function build() {
     if (e.status === 'scheduled' && !e.start) { warn(`${e.file}: статус «scheduled», але немає дати початку — показано як «буде анонсовано»`); e.status = 'tba'; }
     if (CATEGORIES.indexOf(e.category) < 0) { warn(`${e.file}: невідома категорія «${e.category}», використано «event»`); e.category = 'event'; }
     e.title = e.title || e.key;
-    e.resultsHtml = e.results ? marked.parse(String(e.results)) : '';
+    if (e.imageFocus && FOCUS.indexOf(e.imageFocus) < 0) e.imageFocus = '';
+    e.html = fixHtml(e.html);
+    e.resultsHtml = e.results ? fixHtml(marked.parse(String(e.results))) : '';
     return e;
   });
   const pubs = loadCollection('publications').map((p) => {
     p.published = dateStr(p.published);
     if (PUB_TYPES.indexOf(p.type) < 0) { warn(`${p.file}: невідомий тип «${p.type}», використано «essay»`); p.type = 'essay'; }
     p.title = p.title || p.key;
+    if (p.imageFocus && FOCUS.indexOf(p.imageFocus) < 0) p.imageFocus = '';
+    if (p.pdf && !fileSize(p.pdf)) { warn(`${p.file}: файл PDF «${p.pdf}» не знайдено`); p.pdf = ''; }
+    p.html = fixHtml(p.html);
     return p;
   });
-  const pages = loadCollection('pages');
-
-  // архів за роками
-  const years = { uk: [], en: [] };
-  for (const l of LANGS) {
-    const map = new Map();
-    const get = (y) => { if (!map.has(y)) map.set(y, { year: y, events: [], pubs: [] }); return map.get(y); };
-    events.filter((e) => e.lang === l && e.start).forEach((e) => get(e.start.slice(0, 4)).events.push(e));
-    pubs.filter((p) => p.lang === l && p.published).forEach((p) => get(p.published.slice(0, 4)).pubs.push(p));
-    years[l] = [...map.values()].sort((a, b) => (a.year < b.year ? 1 : -1));
-  }
+  // Сторінка вже має власний заголовок, тож перший «# Заголовок» у тексті (повтор назви) прибираємо, а картинку з нього лишаємо.
+  const pages = loadCollection('pages').map((pg) => {
+    pg.html = fixHtml(pg.html).replace(/^\s*<h1[^>]*>([\s\S]*?)<\/h1>/, (m, inner) => { const img = inner.match(/<img [^>]*>/); return img ? `<p>${img[0]}</p>` : ''; });
+    return pg;
+  });
 
   // реєстр сторінок (потрібен для hreflang і перемикача мов)
   const today = new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Kyiv' }).format(new Date());
@@ -161,14 +179,13 @@ async function build() {
   const plan = [];
   const add = (p, fn) => { paths.add(p); plan.push([p, fn]); };
 
-  const S = { site, IMGS, today, partners, paths, events, pubs, years, v };
+  const S = { site, IMGS, today, partners, paths, events, pubs, v, fileSize };
   const R = require('./lib/templates.cjs')(S);
 
   for (const l of LANGS) {
-    add(`/${l}/`, () => R.programme(l));
+    add(`/${l}/`, () => R.focus(l));
+    add(`/${l}/programme/`, () => R.programme(l));
     add(`/${l}/publications/`, () => R.publications(l));
-    add(`/${l}/archive/`, () => R.archiveIndex(l));
-    years[l].forEach((y) => add(`/${l}/archive/${y.year}/`, () => R.archiveYear(l, y)));
     add(`/${l}/contact/`, () => R.contact(l));
   }
   events.forEach((e) => add(R.evUrl(e.lang, e.key), () => R.eventPage(e)));
@@ -181,7 +198,6 @@ async function build() {
   writeOut('/404.html', R.notFound());
 
   // sitemap + robots
-  const base = String(site.basePath || '').replace(/\/$/, '');
   const urls = [...paths].sort().map((p) => {
     const alts = LANGS.map((x) => ({ x, p: p.replace(/^\/(uk|en)\//, '/' + x + '/') })).filter((a) => paths.has(a.p));
     const links = alts.length > 1 ? alts.map((a) => `<xhtml:link rel="alternate" hreflang="${a.x}" href="${site.url}${base}${a.p}"/>`).join('') : '';

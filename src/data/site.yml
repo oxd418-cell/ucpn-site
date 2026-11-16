@@ -8,11 +8,11 @@ description:
 url: https://oxd418-cell.github.io
 basePath: /ucpn-site
 email: info.ucpn@gmail.com
-instagram: ''
+socials: []
+focusCount: 8
 address:
   uk: м. Київ, вул. Стрілецька, 24, Україна
   en: 24 Striletska Street, Kyiv, Ukraine
-heroImage: /assets/uploads/hero_print.jpg
 ogImage: /assets/uploads/hero_print.jpg
 legal:
   name: ''

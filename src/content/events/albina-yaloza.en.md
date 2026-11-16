@@ -19,9 +19,13 @@ eventLanguage: ''
 interpretation: []
 schedule: []
 involved: ''
+format: Workshop, meeting
+within: UCPN Social
+registrationUrl: ''
 image: /assets/uploads/Screenshot 2026-11-09 at 13.40.50.png
 imageAlt: Hands making black-and-white prints on a table
-partners: []
+partners:
+  - 3-6-9
 gallery:
   - image: /assets/uploads/Albina/Group 15.png
     alt:

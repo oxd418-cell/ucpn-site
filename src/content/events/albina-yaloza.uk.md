@@ -8,7 +8,7 @@ title: UCPN social × Albina Yaloza
 summary: 'Лінорит як практика пам’яті та рефлексії: партисипативна майстерня з Альбіною Ялозою для українських ветеранів та ветеранок.'
 lead: ''
 time: ''
-location: ''
+location: 3.6.9, Київ
 startTime: ''
 endTime: ''
 address: ''
@@ -19,9 +19,13 @@ eventLanguage: ''
 interpretation: []
 schedule: []
 involved: ''
+format: Воркшоп, зустріч
+within: UCPN Social
+registrationUrl: ''
 image: /assets/uploads/Screenshot 2026-11-09 at 13.40.50.png
 imageAlt: ''
-partners: []
+partners:
+  - 3-6-9
 gallery:
   - image: /assets/uploads/Albina/Group 15.png
     alt:
