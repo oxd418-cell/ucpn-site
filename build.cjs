@@ -160,7 +160,7 @@ async function build() {
     if (e.status === 'scheduled' && !e.start) { warn(`${e.file}: статус «scheduled», але немає дати початку — показано як «буде анонсовано»`); e.status = 'tba'; }
     if (CATEGORIES.indexOf(e.category) < 0) { warn(`${e.file}: невідома категорія «${e.category}», використано «event»`); e.category = 'event'; }
     e.title = e.title || e.key;
-    if (e.imageFocus && FOCUS.indexOf(e.imageFocus) < 0) e.imageFocus = '';
+    if (e.imageFocus && FOCUS.indexOf(String(e.imageFocus)) < 0 && !/^\d{1,3}$/.test(String(e.imageFocus))) e.imageFocus = '';
     e.html = fixHtml(e.html);
     e.resultsHtml = e.results ? fixHtml(marked.parse(String(e.results))) : '';
     return e;
@@ -169,7 +169,7 @@ async function build() {
     p.published = dateStr(p.published);
     if (PUB_TYPES.indexOf(p.type) < 0) { warn(`${p.file}: невідомий тип «${p.type}», використано «essay»`); p.type = 'essay'; }
     p.title = p.title || p.key;
-    if (p.imageFocus && FOCUS.indexOf(p.imageFocus) < 0) p.imageFocus = '';
+    if (p.imageFocus && FOCUS.indexOf(String(p.imageFocus)) < 0 && !/^\d{1,3}$/.test(String(p.imageFocus))) p.imageFocus = '';
     if (p.pdf && !fileSize(p.pdf)) { warn(`${p.file}: файл PDF «${p.pdf}» не знайдено`); p.pdf = ''; }
     p.html = fixHtml(p.html);
     return p;

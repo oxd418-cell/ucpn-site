@@ -23,8 +23,8 @@ schedule: []
 involved: ''
 registrationUrl: ''
 image: /assets/uploads/events/albina-yaloza-children/cover.jpg
-imageAlt: Carved linocut blocks on a table
-imageFocus: center
+imageAlt: Workshop participants with the artist Albina Yaloza holding a sign reading 14.11.26
+imageFocus: '58'
 partners:
 - chance-for-change
 - 3-6-9

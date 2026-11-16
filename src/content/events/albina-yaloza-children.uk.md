@@ -23,8 +23,8 @@ schedule: []
 involved: ''
 registrationUrl: ''
 image: /assets/uploads/events/albina-yaloza-children/cover.jpg
-imageAlt: Вирізані лінорит-матриці на столі
-imageFocus: center
+imageAlt: Учасники майстерні з художницею Альбіною Ялозою та табличкою «14.11.26 369 × Шанс на зміну»
+imageFocus: '58'
 partners:
 - chance-for-change
 - 3-6-9
