@@ -61,7 +61,7 @@ documentation: []
 videoUrl: ''
 artist:
   name: Kinder Album
-  bio: ''
+  bio: "Kinder Album is a Ukrainian artist who creates original photobooks about childhood. Each album is a complete story: first smiles, genuine emotions and the most precious moments, put together so that you want to return to them again and again. She turns everyday family photographs into a visual narrative that keeps the memory of childhood alive."
   photo: /assets/uploads/events/kinder-album/artist.jpg
   instagram: ''
 ---
