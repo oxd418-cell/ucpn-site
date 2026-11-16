@@ -36,7 +36,7 @@ partners:
   - id: otf
     role: event
     name: OTF
-    url: ''
+    url: https://otf.one/
     logo: ''
     description:
       uk: ''
