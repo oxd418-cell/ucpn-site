@@ -240,3 +240,6 @@ footer{border-top:1px solid var(--line);padding-block:26px 40px}
 
 /* Рядок-запрошення між лініями на «Контактах» */
 .clead{margin:28px 0 28px;font-size:clamp(24px,3vw,38px);font-weight:600;letter-spacing:-0.03em;line-height:1.15}
+
+/* «Показати фото цілим»: та сама висота картки, фото без обрізання, поля в колір картинки */
+.ph.fit img,.ph.fit picture{object-fit:contain}

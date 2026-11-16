@@ -134,7 +134,15 @@ async function processImages() {
         await (fmt === 'webp' ? p.webp({ quality: 78 }) : p.jpeg({ quality: 80, mozjpeg: true })).toFile(out);
       }
     }
-    meta[key] = { w: Math.min(w0, 1600), h: Math.round(h0 * Math.min(w0, 1600) / w0), widths, base };
+    // колір верху фото (для режиму «показати цілим»: поля зливаються з картинкою)
+    let bg = '';
+    try {
+      const px = await sharp(path.join(dir, f)).rotate().resize(16, 16, { fit: 'fill' }).removeAlpha().raw().toBuffer();
+      let r = 0; let g = 0; let bl = 0; let n = 0;
+      for (let y = 0; y < 2; y++) for (let x = 0; x < 16; x++) { const i = (y * 16 + x) * 3; r += px[i]; g += px[i + 1]; bl += px[i + 2]; n++; }
+      bg = '#' + [r, g, bl].map((c) => Math.round(c / n).toString(16).padStart(2, '0')).join('');
+    } catch (e) { bg = ''; }
+    meta[key] = { w: Math.min(w0, 1600), h: Math.round(h0 * Math.min(w0, 1600) / w0), widths, base, bg };
   }
   return meta;
 }
