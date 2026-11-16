@@ -26,6 +26,7 @@ image: /assets/uploads/events/albina-yaloza-children/cover.jpg
 imageAlt: Carved linocut blocks on a table
 imageFocus: center
 partners:
+- chance-for-change
 - 3-6-9
 - fonds-podium-kunsten
 gallery:

@@ -26,6 +26,7 @@ image: /assets/uploads/events/albina-yaloza-children/cover.jpg
 imageAlt: Вирізані лінорит-матриці на столі
 imageFocus: center
 partners:
+- chance-for-change
 - 3-6-9
 - fonds-podium-kunsten
 gallery:
