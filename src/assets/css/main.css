@@ -196,9 +196,9 @@ a.row:hover .rtitle{text-decoration:underline;text-underline-offset:4px}
 .person.big .pname{font-size:22px}
 /* партнери на «Про нас»: однакові картки, логотип зверху в однаковій рамці, під ним назва й підпис */
 .plist{display:flex;flex-wrap:wrap;align-items:flex-start;gap:32px 44px}
-.partner{display:flex;flex-direction:column;align-items:flex-start;gap:12px;min-width:0;width:200px;max-width:100%}
-.mk.logo-img{display:flex;align-items:flex-end;width:100%;height:54px}
-.mk.logo-img img{max-width:100%;max-height:100%;object-fit:contain;object-position:left bottom}
+.partner{display:flex;flex-direction:column;align-items:center;text-align:center;gap:12px;min-width:0;width:200px;max-width:100%}
+.mk.logo-img{display:flex;align-items:flex-end;justify-content:center;width:100%;height:54px}
+.mk.logo-img img{max-width:100%;max-height:100%;object-fit:contain;object-position:center bottom}
 .pn{font-size:17px;font-weight:600;line-height:1.25}
 .pn a{text-decoration:none}
 .pn a:hover{text-decoration:underline;text-underline-offset:4px}
@@ -227,5 +227,5 @@ footer{border-top:1px solid var(--line);padding-block:26px 40px}
 @media(prefers-reduced-motion:reduce){.arrow{transition:none}.track{scroll-behavior:auto}}
 
 /* Клікабельний логотип партнера */
-.mk-link{display:block;text-decoration:none;border:0}
+.mk-link{display:block;width:100%;text-decoration:none;border:0}
 .mk-link:hover img{opacity:.75}
