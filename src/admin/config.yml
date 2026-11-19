@@ -5,9 +5,8 @@ backend:
   name: github
   repo: oxd418-cell/ucpn-site
   branch: main
-
-site_url: https://oxd418-cell.github.io/ucpn-site
-display_url: https://oxd418-cell.github.io/ucpn-site
+site_url: https://ucpn.net
+display_url: https://ucpn.net
 media_folder: src/assets/uploads
 public_folder: /assets/uploads
 locale: uk
